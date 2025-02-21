@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Recommendation Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .dashboard {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user,
+        .project,
+        .quiz {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .user:last-child,
+        .project:last-child,
+        .quiz:last-child {
+            border-bottom: none;
+        }
+        
+        .connect-btn,
+        .view-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .connect-btn:hover,
+        .view-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        <h2>AI-Powered Recommendations</h2>
+        <div id="recommendations"><div class="user">
+                <span><strong>Pratibha sharma</strong> (Faculty Member)</span>
+                <button class="connect-btn" onclick="connectUser(&#39;Pratibha sharma&#39;)">Connect</button>
+            </div><div class="user">
+                <span><strong>Devender</strong> (Student)</span>
+                <button class="connect-btn" onclick="connectUser(&#39;Devender&#39;)">Connect</button>
+            </div><div class="user">
+                <span><strong>Rupesh Kumar Tipu</strong> (Faculty Member)</span>
+                <button class="connect-btn" onclick="connectUser(&#39;Rupesh Kumar Tipu&#39;)">Connect</button>
+            </div><div class="user">
+                <span><strong>Ishika Banga</strong> (Student)</span>
+                <button class="connect-btn" onclick="connectUser(&#39;Ishika Banga&#39;)">Connect</button>
+            </div></div>
+        <h2>Live Projects</h2>
+        <div id="projects"><div class="project">
+                <span><strong>AI Chatbot</strong>: A chatbot using NLP techniques</span>
+                <button class="view-btn" onclick="viewProject(&#39;AI Chatbot&#39;)">View</button>
+            </div><div class="project">
+                <span><strong>Smart Attendance System</strong>: Face recognition-based attendance</span>
+                <button class="view-btn" onclick="viewProject(&#39;Smart Attendance System&#39;)">View</button>
+            </div></div>
+        <h2>Quizzes</h2>
+        <div id="quizzes"><div class="quiz">
+                <span><strong>AI Basics</strong>: Test your knowledge on AI fundamentals</span>
+                <button class="view-btn" onclick="takeQuiz(&#39;AI Basics&#39;)">Take Quiz</button>
+            </div><div class="quiz">
+                <span><strong>Machine Learning</strong>: Quiz on ML algorithms and concepts</span>
+                <button class="view-btn" onclick="takeQuiz(&#39;Machine Learning&#39;)">Take Quiz</button>
+            </div></div>
+    </div>
+
+    <script>
+        // Mock AI-generated recommendations
+        const recommendations = [{
+            name: "Pratibha sharma",
+            role: "Faculty Member"
+        }, {
+            name: "Devender",
+            role: "Student"
+        }, {
+            name: "Rupesh Kumar Tipu",
+            role: "Faculty Member"
+        }, {
+            name: "Ishika Banga",
+            role: "Student"
+        }];
+
+        const projects = [{
+            title: "AI Chatbot",
+            description: "A chatbot using NLP techniques"
+        }, {
+            title: "Smart Attendance System",
+            description: "Face recognition-based attendance"
+        }];
+
+        const quizzes = [{
+            title: "AI Basics",
+            description: "Test your knowledge on AI fundamentals"
+        }, {
+            title: "Machine Learning",
+            description: "Quiz on ML algorithms and concepts"
+        }];
+
+        const recommendationContainer = document.getElementById("recommendations");
+        const projectContainer = document.getElementById("projects");
+        const quizContainer = document.getElementById("quizzes");
+
+        recommendations.forEach(user => {
+            const userDiv = document.createElement("div");
+            userDiv.classList.add("user");
+            userDiv.innerHTML = `
+                <span><strong>${user.name}</strong> (${user.role})</span>
+                <button class="connect-btn" onclick="connectUser('${user.name}')">Connect</button>
+            `;
+            recommendationContainer.appendChild(userDiv);
+        });
+
+        projects.forEach(project => {
+            const projectDiv = document.createElement("div");
+            projectDiv.classList.add("project");
+            projectDiv.innerHTML = `
+                <span><strong>${project.title}</strong>: ${project.description}</span>
+                <button class="view-btn" onclick="viewProject('${project.title}')">View</button>
+            `;
+            projectContainer.appendChild(projectDiv);
+        });
+
+        quizzes.forEach(quiz => {
+            const quizDiv = document.createElement("div");
+            quizDiv.classList.add("quiz");
+            quizDiv.innerHTML = `
+                <span><strong>${quiz.title}</strong>: ${quiz.description}</span>
+                <button class="view-btn" onclick="takeQuiz('${quiz.title}')">Take Quiz</button>
+            `;
+            quizContainer.appendChild(quizDiv);
+        });
+
+        function connectUser(name) {
+            alert(`Connection request sent to ${name}!`);
+        }
+
+        function viewProject(title) {
+            alert(`Viewing project: ${title}`);
+        }
+
+        function takeQuiz(title) {
+            alert(`Starting quiz: ${title}`);
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
