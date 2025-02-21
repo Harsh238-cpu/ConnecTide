@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Collaboration</title>
+    <link rel="stylesheet" href="css.css"> <!-- Corrected CSS linking -->
+</head>
+<body>
+
+    <h1>Projects & Collaboration</h1>
+
+    <section class="section">
+        <h2>Post Project</h2>
+        <input type="text" id="projectTitle" placeholder="Project Title">
+        <textarea id="projectDescription" placeholder="Project Description"></textarea>
+        <input type="text" id="teammatesNeeded" placeholder="Teammates Needed">
+        <button onclick="postProject()">Submit Project</button>
+    </section>
+
+    <section class="section">
+        <h2>Post Assignment</h2>
+        <input type="text" id="assignmentTitle" placeholder="Assignment Title">
+        <textarea id="assignmentDescription" placeholder="Assignment Content"></textarea>
+        <button onclick="submitAssignment()">Submit Assignment</button>
+    </section>
+
+    <section class="section">
+        <h2>Post Notes</h2>
+        <input type="text" id="noteTitle" placeholder="Note Title">
+        <textarea id="noteContent" placeholder="Note Content"></textarea>
+        <button onclick="postNote()">Submit Note</button>
+    </section>
+
+    <section class="section">
+        <h2>All Projects</h2>
+        <button onclick="getProjects()">Load Projects</button>
+        <ul id="projectList"></ul>
+    </section>
+
+    <section class="section">
+        <h2>All Notes</h2>
+        <button onclick="getNotes()">Load Notes</button>
+        <ul id="noteList"></ul>
+    </section>
+
+    
+</body>
+</html>
