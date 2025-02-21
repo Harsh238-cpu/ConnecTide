@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h2, h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        p {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h2 id="name">Harsh Roy</h2>
+            <p id="course">BTech CSE</p>
+            <h3>Skills</h3>
+            <p id="skills">Java, Python, Web Development</p>
+            <h3>Interests</h3>
+            <p id="interests">AI, Cybersecurity, Cloud Computing</p>
+        </div>
+
+        <div class="connections">
+            <h3>Connections</h3>
+            <ul id="connections-list">
+                <li><img src="user1.jpg" alt=""> <p>Pratibha Sharma</p></li>
+                <li><img src="user2.jpg" alt=""> <p>Rupesh Kumar Tipu</p></li>
+                <li><img src="user3.jpg" alt=""> <p>Sumnt Kumar Das</p></li>
+            </ul>
+        </div>
+
+        <div class="daily-challenge">
+            <h3>Daily Skill Challenge</h3>
+            <p>Complete a challenge to earn badges!</p>
+            <button onclick="completeChallenge()">Complete Challenge</button>
+            <p>Points: <span id="points">0</span></p>
+            <p>Badges: <span id="badges">🏅</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
