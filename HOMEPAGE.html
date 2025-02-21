@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnecTide Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h2 {
+            margin-bottom: 25px;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        input:focus {
+            border: 2px solid #4CAF50;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .link {
+            margin-top: 20px;
+            cursor: pointer;
+            color: #00aaff;
+            font-size: 0.9rem;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        #registerForm {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="formTitle">ConnecTide Login</h2>
+        <div id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <input type="email" id="loginEmail" placeholder="Email Address" required>
+            <button onclick="login()">Login</button>
+            <div class="link" onclick="showRegister()">Not registered? Register here</div>
+        </div>
+        <div id="registerForm">
+            <input type="tel" id="registerMobile" placeholder="Mobile Number" required>
+            <input type="email" id="registerEmail" placeholder="Email Address" required>
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button onclick="register()">Register</button>
+            <div class="link" onclick="showLogin()">Already registered? Login here</div>
+        </div>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('formTitle').innerText = 'Register';
+        }
+
+        function showLogin() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('formTitle').innerText = 'ConnecTide Login';
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('loginPassword').value;
+            const email = document.getElementById('loginEmail').value;
+
+            if (username && password && email) {
+                alert(Welcome $ {
+                    username
+                }!);
+            } else {
+                alert('Please fill all login fields.');
+            }
+        }
+
+        function register() {
+            const mobile = document.getElementById('registerMobile').value;
+            const email = document.getElementById('registerEmail').value;
+            const otp = document.getElementById('otp').value;
+
+            if (mobile && email && otp) {
+                alert('Registration successful! Please login.');
+                showLogin();
+            } else {
+                alert('Please fill all registration fields.');
+            }
+        }
+    </script>
+</body>
+
+</html>
